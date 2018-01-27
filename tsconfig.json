@@ -1,4 +1,4 @@
-{
+  {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": false,
@@ -8,7 +8,7 @@
       "dom",
       "es2015"
     ],
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5"

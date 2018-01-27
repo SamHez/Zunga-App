@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-  <button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Zunga</ion-title>
@@ -13,28 +13,26 @@
   <ion-card>
     <ion-card-content>
       <div class="row">
-      <div class="col-sm-11">
-        <ion-input type="text" value="" placeholder="What to you wish to do?" style="width: 100%;"></ion-input></div>
+        <div class="col-sm-11">
+          <ion-input [(ngModel)]="searchText" type="text" value="" placeholder="What to you wish to do?" style="width: 100%;"></ion-input>
+        </div>
         <!-- Submit -->
         <div class="col-sm-1">
-        <button ion-button menuToggle style="float: right; margin-left: 2%;">
-        <ion-icon name="md-arrow-forward"></ion-icon>
-      </button>
+          <button (click)="checkForAnswer()" ion-button style="float: right; margin-left: 2%;">
+            <ion-icon name="md-arrow-forward"></ion-icon>
+          </button>
+        </div>
       </div>
-    </div>
 
     </ion-card-content>
-</ion-card>
+  </ion-card>
 
-<ion-footer>
+  <ion-footer>
     <ion-toolbar>
-      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">I've <b>got</b> just the places for you!</ion-header>
+      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+        {{displayText}}
+      </ion-header>
     </ion-toolbar>
-
-    <ion-list style="display: none;">
-      <ion-icon name="item-start"></ion-icon>
-      <p style="font-size: 14px; margin-left: 5%;">Pizza-hut Kampala</p>
-  </ion-list>
 
   </ion-footer>
 
