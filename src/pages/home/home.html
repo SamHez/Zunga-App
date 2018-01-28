@@ -3,21 +3,33 @@
   <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Zunga</ion-title>
+  <div class="row" >
+
+  <div class="col-sm-6 " >
+          <img src="../assets/imgs/Zunga-Logo.png" width="50px" height="50px">
+          </div>
+
+
+      <div class="col-sm-6" >
+          <ion-title style="padding-top: 16%;">Zunga</ion-title>
+          </div>
+
+          
+    </div>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding >
 
-  <ion-card>
+<ion-card class="home-search">
     <ion-card-content>
       <div class="row">
-      <div class="col-sm-11">
-        <ion-input type="text" value="" placeholder="What to you wish to do?" style="width: 100%;"></ion-input></div>
+      <div class="col-sm-12">
+        <ion-input type="text" value="" placeholder="What do you wish to do?" style="width: 100%;"></ion-input></div>
         <!-- Submit -->
-        <div class="col-sm-1">
-        <button ion-button menuToggle style="float: right; margin-left: 2%;">
+        <div class="col">
+        <button ion-button style="float: right; margin-left: 2%;">
         <ion-icon name="md-arrow-forward"></ion-icon>
       </button>
       </div>
@@ -26,17 +38,45 @@
     </ion-card-content>
 </ion-card>
 
+
+
+
+<div id="floating-panel">
+    <b>Start: </b>
+    <select [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()">
+      <option value="Outbox, Kampala">The Outbox Hub </option>
+    </select><br>
+    <b>End: </b>
+    <select [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()">
+      <option value="Outbox, Kampala">Outbox</option>
+      <option value="Standard Supermarket, Kampala">Standard Supermarket</option>
+      <option value="The Roots Restaurant, Kampala">Roots Restaurant</option>
+      <option value="Tuskys Supermarket, Kampala">Tuskys Supermarket</option>
+      <option value="Pep, Kampala">Pep</option>
+      <option value="Banana Boat, Kampala">Banana Boat</option>
+      <option value="Kaymu, Kampala">Kaymu</option>
+      <option value="Suits Avenue, Kampala">Suits Avenue</option>
+      <option value=" Enviri hair salon, Kampala"> Enviri hair salon</option>
+      <option value="Yujo Restaurant, Kampala">Yujo Restaurant</option>
+      <option value="Sparkles Saloon, Kampala">Spakles saloon</option>
+    </select>
+    </div>
+
+    <div #map id="map"></div>
+
+
+
+<!-- Bottom Section -->
 <ion-footer>
-    <ion-toolbar>
-      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">I've <b>got</b> just the places for you!</ion-header>
+    <ion-toolbar class="app-footer">
+      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; ">I've <b>got</b> just the places for you!</ion-header>
     </ion-toolbar>
 
     <ion-list style="display: none;">
       <ion-icon name="item-start"></ion-icon>
       <p style="font-size: 14px; margin-left: 5%;">Pizza-hut Kampala</p>
   </ion-list>
-
-  </ion-footer>
+</ion-footer>
 
 
 </ion-content>
