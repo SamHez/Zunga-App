@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-  <button ion-button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
   <div class="row" >
@@ -14,7 +14,7 @@
           <ion-title style="padding-top: 16%;">Zunga</ion-title>
           </div>
 
-          
+
     </div>
   </ion-navbar>
 </ion-header>
@@ -25,18 +25,19 @@
 <ion-card class="home-search">
     <ion-card-content>
       <div class="row">
-      <div class="col-sm-12">
-        <ion-input type="text" value="" placeholder="What do you wish to do?" style="width: 100%;"></ion-input></div>
+        <div class="col-sm-12">
+          <ion-input [(ngModel)]="searchText" type="text" value="" placeholder="What do you wish to do?" style="width: 100%;"></ion-input>
+        </div>
         <!-- Submit -->
         <div class="col">
-        <button ion-button style="float: right; margin-left: 2%;">
-        <ion-icon name="md-arrow-forward"></ion-icon>
-      </button>
+          <button (click)="checkForAnswer()" ion-button style="float: right; margin-left: 2%;">
+            <ion-icon name="md-arrow-forward"></ion-icon>
+          </button>
+        </div>
       </div>
-    </div>
 
     </ion-card-content>
-</ion-card>
+  </ion-card>
 
 
 
@@ -69,14 +70,15 @@
 <!-- Bottom Section -->
 <ion-footer>
     <ion-toolbar class="app-footer">
-      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; ">I've <b>got</b> just the places for you!</ion-header>
+      <ion-header align="center" style="font-family:raleway; font-size: 15px; padding-top: 15px; padding-bottom: 15px; ">{{displayText}}</ion-header>
     </ion-toolbar>
 
     <ion-list style="display: none;">
       <ion-icon name="item-start"></ion-icon>
       <p style="font-size: 14px; margin-left: 5%;">Pizza-hut Kampala</p>
   </ion-list>
-</ion-footer>
+
+  </ion-footer>
 
 
 </ion-content>
