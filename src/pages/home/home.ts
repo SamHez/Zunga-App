@@ -29,10 +29,10 @@ export class HomePage {
     let handler = this.remote.checkMeaning(this.searchText);
     handler.subscribe(
       (translation) => {
-        this.displayText = translation.resp + " " + translation.guesses[0];
+        this.displayText = translation.resp;
       },
       () => {
-        this.displayText = 'Oops! Did not get that. Please try again.'
+        this.displayText = 'Oops! Did not get that. Please try again.';
       }
     );
   }
